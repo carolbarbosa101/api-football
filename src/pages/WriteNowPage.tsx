@@ -1,6 +1,7 @@
-import { Button, Nav } from "components";
+import { Button, DateTimePicker, Nav } from "components";
 
 export function WriteNowPage(){
+    const { register, handleSubmit} = useForm()
     
     return (
         <>
@@ -9,20 +10,19 @@ export function WriteNowPage(){
             <div className="container">
 
             <h1>Se Cadastre para saber informações do seu time</h1>
-            <form className="form">
+            <form className="form" onSubmit={}>
 
                 <label htmlFor="destinationName"> Nome Completo:  </label>
-                <input type="text" placeholder="seu nome completo"/>
+                <input {...register('destinationName')} type="text" placeholder="seu nome completo"/>
               
                 <label htmlFor="destinationAddress"> E-mail: </label>
-                <input type="text" placeholder="Ex. joao@email.com" />
-                
+                <input {...register('destinationAddress')} type="text" placeholder="Ex. joao@email.com" />
+                <label htmlFor="dueDate">Data: </label>
+                <DateTimePicker />
                 <label htmlFor="key">Key Auntetication: </label>
-                <input type="password" placeholder="**********"/>
-                <label htmlFor="dueDate"></label>
-                <input type="date" />
-                <Button type="submit" variant="primary"> Login</Button>
+                <input {...register('key')} type="password" placeholder="**********"/>
                 
+                <Button type="submit" variant="primary"> Login</Button>
             </form>
             </div>
         </>
