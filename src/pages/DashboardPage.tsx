@@ -13,7 +13,7 @@ export function DashboardPage() {
                 <h2>Check the latest information about your team!</h2>
             </div>
             <div>
-                <h1></h1>]
+                <h1></h1>
                 
             </div>
         </>

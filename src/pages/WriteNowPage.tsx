@@ -2,6 +2,12 @@ import { Button, DateTimePicker, Nav } from "components";
 
 export function WriteNowPage(){
     const { register, handleSubmit} = useForm()
+
+    function onSubmit(values: any){
+
+        console.log("~ file: WriteNowPage.tsx ~ line 9 ~ onSubmit ~ values",
+        values)
+    }
     
     return (
         <>
@@ -10,15 +16,17 @@ export function WriteNowPage(){
             <div className="container">
 
             <h1>Se Cadastre para saber informações do seu time</h1>
-            <form className="form" onSubmit={}>
+            <form className="form" onSubmit={handleSubmit(onSubmit)}>
 
                 <label htmlFor="destinationName"> Nome Completo:  </label>
                 <input {...register('destinationName')} type="text" placeholder="seu nome completo"/>
               
                 <label htmlFor="destinationAddress"> E-mail: </label>
                 <input {...register('destinationAddress')} type="text" placeholder="Ex. joao@email.com" />
+                
                 <label htmlFor="dueDate">Data: </label>
                 <DateTimePicker />
+                
                 <label htmlFor="key">Key Auntetication: </label>
                 <input {...register('key')} type="password" placeholder="**********"/>
                 
