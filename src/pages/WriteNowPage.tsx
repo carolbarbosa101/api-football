@@ -1,7 +1,9 @@
+import { FormProvider, useForm } from 'react-hook-form';
 import { Button, DateTimePicker, Nav } from "components";
 
 export function WriteNowPage(){
-    const { register, handleSubmit} = useForm()
+    const formMethods = useForm();
+    const {register, handleSubmit} = formMethods;
 
     function onSubmit(values: any){
 
@@ -12,10 +14,10 @@ export function WriteNowPage(){
     return (
         <>
             <Nav/>
-
             <div className="container">
-
             <h1>Se Cadastre para saber informações do seu time</h1>
+            
+            <FormProvider {...formMethods}>
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
 
                 <label htmlFor="destinationName"> Nome Completo:  </label>
@@ -32,6 +34,7 @@ export function WriteNowPage(){
                 
                 <Button type="submit" variant="primary"> Login</Button>
             </form>
+            </FormProvider>
             </div>
         </>
     );
