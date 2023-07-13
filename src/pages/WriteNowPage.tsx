@@ -27,7 +27,7 @@ export function WriteNowPage(){
                 <input {...register('destinationAddress')} type="text" placeholder="Ex. joao@email.com" />
                 
                 <label htmlFor="dueDate">Data: </label>
-                <DateTimePicker />
+                <DateTimePicker name="dueDate" />
                 
                 <label htmlFor="key">Key Auntetication: </label>
                 <input {...register('key')} type="password" placeholder="**********"/>
